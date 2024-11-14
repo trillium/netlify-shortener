@@ -99,7 +99,7 @@ Array [
     Array [
       "commit",
       "-am",
-      "/foo -> https://foo.com",
+      "feat: Add /foo -> https://foo.com",
     ],
     Object {
       "cwd": "/my/cwd",
@@ -121,7 +121,7 @@ Array [
   expect(console.log.mock.calls).toMatchInlineSnapshot(`
 Array [
   Array [
-    "committing: /foo -> https://foo.com",
+    "committing: feat: Add /foo -> https://foo.com",
   ],
   Array [
     "pushing",
@@ -142,7 +142,7 @@ Array [
     Array [
       "commit",
       "-am",
-      "format links",
+      "style: Format links",
     ],
     Object {
       "cwd": undefined,
@@ -164,7 +164,7 @@ Array [
   expect(console.log.mock.calls).toMatchInlineSnapshot(`
 Array [
   Array [
-    "committing: format links",
+    "committing: style: Format links",
   ],
   Array [
     "pushing",

@@ -48,7 +48,7 @@ function pull(cwd) {
 }
 
 function commitAndPush(short, longLink, cwd) {
-  const message = longLink ? `${short} -> ${longLink}` : 'format links'
+  const message = longLink ? `feat: Add ${short} -> ${longLink}` : 'style: Format links';
   console.log(`committing: ${message}`)
   spawnSync('git', ['commit', '-am', message], {
     stdio: 'inherit',
