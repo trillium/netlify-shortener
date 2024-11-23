@@ -28,6 +28,13 @@ pull(repoRoot);
 const [,, longLink, codeRaw] = process.argv;
 let code;
 if (codeRaw) {
+  try {
+    validateUrl(codeRaw);
+    console.log('codeRaw should not be a valid URL');
+    throw new Error('codeRaw should not be a valid URL');
+  } catch {
+    // If validateUrl throws an error, it will be caught here and nothing will happen
+  }
   code = encodeURIComponent(codeRaw.startsWith('/') ? codeRaw.substring(1) : codeRaw);
 }
 const short = `/${code || generateCode()}`;

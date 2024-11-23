@@ -63,6 +63,14 @@ function validateUrl(url) {
   // eslint-disable-next-line no-new
   new URL(url);
 }
+function validateUrlBoolean(url) {
+  try {
+    validateUrl(url);
+  } catch {
+    return false;
+  }
+  return true;
+}
 function addProtocolIfMissing(url) {
   if (url.startsWith('http://') || url.startsWith('https://')) {
     return url;
@@ -85,5 +93,6 @@ module.exports = {
   commitAndPush,
   validateUrl,
   validateUnique,
-  addProtocolIfMissing
+  addProtocolIfMissing,
+  validateUrlBoolean
 };
